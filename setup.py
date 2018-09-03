@@ -20,6 +20,16 @@ AUTHOR = 'AlexHtZhang'
 REQUIRES_PYTHON = '>=3.6.0'
 VERSION = None
 
+# What packages are required for this module to be executed?
+REQUIRED = [
+
+]
+
+# What packages are optional?
+EXTRAS = {
+
+}
+
 
 here = os.path.abspath(os.path.dirname(__file__))
 
@@ -86,6 +96,8 @@ setup(
     author=AUTHOR,
     author_email=EMAIL,
     python_requires=REQUIRES_PYTHON,
+    install_requires=REQUIRED,
+    extras_require=EXTRAS,
     url=URL,
     py_modules=['hashheap'],
     entry_points={
