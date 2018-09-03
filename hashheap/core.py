@@ -27,6 +27,7 @@ class HashHeap:
         :input: desc, ture for min heap, flase for max heap.  
         :type: bool 
         '''
+        assert isinstance(desc, bool) 
         self.hash = dict()
         self.heap = []
         self.desc = desc
