@@ -1,28 +1,84 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# Author: AlexHtZhang
+
+''' 
+HashHeap is a datastructure that supports O(logn) remove, O(1) top, O(logn) pop, O(logn) push with regarding to time complexity. 
+
+This program was developed and tested under following environments:
+python: 2.7.14.final.0
+python-bits: 64
+OS: Darwin
+OS-release: 16.7.0
+machine: x86_64
+processor: i386
+byteorder: little
+LC_ALL: None
+LANG: en_US.UTF-8
+LOCALE: None.None
+'''
 class HashHeap:
+
+    '''HashHeap is a datastructure that supports O(logn) remove, O(1) top, O(logn) pop, O(logn) push with regarding to time complexity. 
+    '''
     
     def __init__(self, desc=False):
+        '''Initalize hashheap.  
+        :input: desc, ture for min heap, flase for max heap.  
+        :type: bool 
+        '''
         self.hash = dict()
         self.heap = []
         self.desc = desc
         
     @property
     def size(self):
+        '''Get the size of the hashheap.  
+        :input: None
+        :type: None 
+        :return: Size of the hashheap
+        :type: int
+        '''
         return len(self.heap)
         
     def push(self, item):
+        '''push item into hashheap.  
+        :input: item
+        :type: type of item 
+        :return: None
+        :type: None
+        '''
         self.heap.append(item)
         self.hash[item] = self.size - 1
         self._sift_up(self.size - 1)
         
     def pop(self):
+        '''Remove and return the top of the HashHeap.  
+        :input: None
+        :type: None 
+        :return: item in hashheap
+        :type: type of item in hashheap
+        '''
         item = self.heap[0]
         self.remove(item)
         return item
     
     def top(self):
+        '''Return the top of the HashHeap without remove it.  
+        :input: None
+        :type: None 
+        :return: item in hashheap
+        :type: type of item in hashheap
+        '''
         return self.heap[0]
         
     def remove(self, item):
+        '''remove element in HashHeap in O(logn) time complexity.  
+        :input: param
+        :type: dict 
+        :return: None
+        :type: None
+        '''
         if item not in self.hash:
             return
             
@@ -32,7 +88,6 @@ class HashHeap:
         del self.hash[item]
         self.heap.pop()
         
-        # in case of the removed item is the last item
         if index < self.size:
             self._sift_up(index)
             self._sift_down(index)

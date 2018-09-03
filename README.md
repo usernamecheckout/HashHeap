@@ -7,9 +7,58 @@ Hope similar data structure can be added to python offical library.
 Install 
 -----
 
--   Tests via `$ setup.py test` (if it's concise).
+-   Install via `$ pip install HashHeap` .
 
-Pull requests are encouraged!
+How to use
+-----
+-   `$ from HashHeap import HashHeap` .
+
+
+    def __init__(self, desc=False):
+        '''Initalize hashheap.  
+        :input: desc, ture for min heap, flase for max heap.  
+        :type: bool 
+        '''
+        
+    def size(self):
+        '''Get the size of the hashheap.  
+        :input: None
+        :type: None 
+        :return: Size of the hashheap
+        :type: int
+        '''
+        
+    def push(self, item):
+        '''push item into hashheap.  
+        :input: item
+        :type: type of item 
+        :return: None
+        :type: None
+        '''
+        
+    def pop(self):
+        '''Remove and return the top of the HashHeap.  
+        :input: None
+        :type: None 
+        :return: item in hashheap
+        :type: type of item in hashheap
+        '''
+    
+    def top(self):
+        '''Return the top of the HashHeap without remove it.  
+        :input: None
+        :type: None 
+        :return: item in hashheap
+        :type: type of item in hashheap
+        '''
+        
+    def remove(self, item):
+        '''remove element in HashHeap in O(logn) time complexity.  
+        :input: param
+        :type: dict 
+        :return: None
+        :type: None
+        '''
 
 
 License
@@ -20,3 +69,5 @@ This is free and unencumbered software released into the public domain.
 Anyone is free to copy, modify, publish, use, compile, sell, or
 distribute this software, either in source code form or as a compiled
 binary, for any purpose, commercial or non-commercial, and by any means.
+
+Pull requests are encouraged!
